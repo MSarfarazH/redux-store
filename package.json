@@ -17,6 +17,8 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@apollo/react-components": "^4.0.0-beta.2",
+    "@apollo/react-hooks": "^4.0.0",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1"
   }
