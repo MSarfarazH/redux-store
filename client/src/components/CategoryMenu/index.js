@@ -9,9 +9,9 @@ import { idbPromise } from '../../utils/helpers';
 import { useSelector, useDispatch } from "react-redux";
 
 function CategoryMenu() {
-  const state = useSelector(state => state);
+  const state = useSelector((state) => state);
 
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
@@ -24,10 +24,10 @@ function CategoryMenu() {
         categories: categoryData.categories,
       });
       categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
+        idbPromise("categories", "put", category);
       });
     } else if (!loading) {
-      idbPromise('categories', 'get').then((categories) => {
+      idbPromise("categories", "get").then((categories) => {
         dispatch({
           type: UPDATE_CATEGORIES,
           categories: categories,
@@ -59,5 +59,3 @@ function CategoryMenu() {
     </div>
   );
 }
-
-export default CategoryMenu;
